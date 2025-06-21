@@ -1,0 +1,1 @@
+minimalistic portfolio w typescript

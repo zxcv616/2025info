@@ -1,1 +1,2 @@
-minimalistic portfolio w typescript
+minimalistic portfolio w typescript yuuuuup
+

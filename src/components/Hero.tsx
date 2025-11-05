@@ -33,7 +33,7 @@ const Hero = () => {
                   INFO
                 </h1>
                 <p className="text-sm text-gray-500 font-light leading-relaxed">
-                  Cybersecurity Engineer
+                  Engineer
                 </p>
               </div>
             </div>
@@ -129,9 +129,9 @@ const Hero = () => {
               <h3 className="text-xs text-gray-400 font-light tracking-[0.25em] uppercase">Selected Work</h3>
               <div className="space-y-4">
                 {[
-                  { name: 'RISC_V CPU', tech: 'Systemverilog, Verilog, C', url: 'https://github.com/zxcv616/otter-w-cache' },
-                  { name: 'MarketLens', tech: 'React, Python, YFinance', url: 'https://github.com/zxcv616/MarketLens' },
-                  { name: 'WavHaven', tech: 'React, Node.js, Django', url: 'https://github.com/zxcv616/WavHaven' }
+                  { name: 'Wavhaven', tech: 'Beat Marketplace', url: 'https:wavhaven.io' },
+                  { name: 'Axis', tech: 'AI Game Engine', url: 'https://google.com' },
+                  { name: 'Halden', tech: 'Cybersecurity Platform', url: 'https://google.com' }
                 ].map((project, index) => (
                   <motion.a
                     key={index}
@@ -215,7 +215,7 @@ const Hero = () => {
               <h3 className="text-xs text-gray-400 font-light tracking-[0.25em] uppercase">Status</h3>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full"></div>
-                <span className="text-sm text-gray-500 font-light">Employed</span>
+                <span className="text-sm text-gray-500 font-light">Self-Employed</span>
               </div>
             </motion.div>
 

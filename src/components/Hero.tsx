@@ -33,7 +33,7 @@ const Hero = () => {
                   INFO
                 </h1>
                 <p className="text-sm text-gray-500 font-light leading-relaxed">
-                  Engineer
+                  Building Halden and Axis IDE
                 </p>
               </div>
             </div>

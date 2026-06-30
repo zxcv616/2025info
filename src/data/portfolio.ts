@@ -13,7 +13,7 @@ export const profile = {
   linkedin: 'https://www.linkedin.com/in/mwiecking',
 }
 
-// Words that cycle in the hero — keep them short.
+// Words that cycle in the hero (keep them short).
 export const roles = [
   'full-stack engineer',
   'systems builder',
@@ -21,8 +21,8 @@ export const roles = [
 ]
 
 export const about = [
-  // TODO: tighten this bio in your own voice — it's drafted from your existing framing.
-  `I'm a software engineer who likes shipping the whole thing — from kernel-level
+  // TODO: tighten this bio in your own voice (it's drafted from your existing framing).
+  `I'm a software engineer who likes shipping the whole thing, from kernel-level
    telemetry in Rust to client-side video rendering in the browser. Currently
    self-employed in San Francisco, building Halden and a handful of products
    across security, audio, and trading.`,
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     name: 'Lyric Video',
     tagline: 'Song → vertical lyric video, entirely in the browser',
     description:
-      'Web app that turns a song into a vertical lyric video. Upload audio and background media, auto-transcribe with local Whisper, fix timing in the editor, pick a look, and export an MP4 — every frame rendered client-side with ffmpeg.wasm, no uploads.',
+      'Web app that turns a song into a vertical lyric video. Upload audio and background media, auto-transcribe with local Whisper, fix timing in the editor, pick a look, and export an MP4. Every frame is rendered client-side with ffmpeg.wasm, no uploads.',
     stack: ['React 19', 'TypeScript', 'Vite', 'Tailwind', 'ffmpeg.wasm', 'FastAPI', 'faster-whisper'],
     link: 'https://github.com/zxcv616/musicbot',
     linkLabel: 'GitHub',

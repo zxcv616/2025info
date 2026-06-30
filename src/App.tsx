@@ -43,7 +43,7 @@ function App() {
             </h1>
             <p className="mt-3 font-display text-lg text-ink-700 sm:text-xl">
               {profile.role}
-              <span className="text-accent"> — building across Rust, TypeScript &amp; Python</span>
+              <span className="text-accent">, building across Rust, TypeScript &amp; Python</span>
             </p>
           </div>
 
@@ -120,7 +120,7 @@ function App() {
           <Block i={2} className="card">
             <p className="eyebrow mb-3">About</p>
             <p className="text-sm leading-relaxed text-ink-700">
-              Full-stack engineer shipping the whole thing — from kernel-level EDR in
+              Full-stack engineer shipping the whole thing, from kernel-level EDR in
               Rust to client-side video rendering in the browser. Self-employed in SF,
               building Halden.
             </p>

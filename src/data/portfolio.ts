@@ -80,6 +80,36 @@ export const projects: Project[] = [
     linkLabel: 'GitHub',
     year: '2025',
   },
+  {
+    name: 'Outscaled.GG',
+    tagline: 'ML prop predictions for LoL esports',
+    description:
+      'Series-level player-prop prediction for League of Legends esports. Recency-weighted empirical modeling blended with a Negative Binomial distribution, real market-line ingestion, walk-forward backtesting, and a live paper-trading dashboard.',
+    stack: ['Python', 'FastAPI', 'Pandas', 'SciPy', 'React', 'Docker'],
+    link: 'https://github.com/zxcv616/Outscaled2',
+    linkLabel: 'GitHub',
+    year: '2026',
+  },
+  {
+    name: 'proxy-scraper',
+    tagline: 'Go proxy aggregator + validator',
+    description:
+      'Pulls proxy lists from 15 public sources, dedupes them, tests each concurrently against a judge endpoint, and returns only the ones that work, ranked by latency. Interactive shell plus direct CLI subcommands.',
+    stack: ['Go', 'SOCKS5 / SOCKS4', 'Concurrency', 'CLI'],
+    link: 'https://github.com/zxcv616/proxy-scraper',
+    linkLabel: 'GitHub',
+    year: '2025',
+  },
+  {
+    name: 'prizepicks-scraper',
+    tagline: 'Timestamped PrizePicks line snapshots',
+    description:
+      'Fetches PrizePicks player-prop projections and stores clean, queryable snapshots. Handles DataDome protection via local browser or unlocker APIs, caches recent pulls, and exports to SQLite, CSV, or JSON.',
+    stack: ['Python', 'Playwright', 'SQLite', 'CLI'],
+    link: 'https://github.com/zxcv616/prizepicks-scraper',
+    linkLabel: 'GitHub',
+    year: '2025',
+  },
 ]
 
 export type Experience = {

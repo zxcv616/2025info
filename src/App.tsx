@@ -73,7 +73,7 @@ function App() {
           {/* Selected work */}
           <Block i={1} className="card lg:col-span-2">
             <p className="eyebrow mb-4">Selected Work</p>
-            <div className="flex flex-col divide-y divide-ink-900/10">
+            <div className="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
               {projects.map((p) => {
                 const Tag = p.link ? 'a' : 'div'
                 return (
@@ -82,29 +82,27 @@ function App() {
                     {...(p.link
                       ? { href: p.link, target: '_blank', rel: 'noopener noreferrer' }
                       : {})}
-                    className="group flex flex-col gap-2 py-3.5 first:pt-0 last:pb-0 sm:flex-row sm:items-center sm:justify-between"
+                    className="group flex flex-col gap-1 rounded-lg border border-transparent p-2.5 transition-colors duration-200 hover:border-ink-900/10 hover:bg-paper-200/50"
                   >
-                    <div className="min-w-0">
-                      <div className="flex items-center gap-2">
-                        <h3 className="font-display text-base font-semibold text-ink-900">
-                          {p.name}
-                        </h3>
-                        {p.link ? (
-                          <ArrowUpRight
-                            size={15}
-                            className="text-ink-400 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
-                          />
-                        ) : (
-                          <Lock size={12} className="text-ink-400" />
-                        )}
-                      </div>
-                      <p className="text-sm text-ink-500">{p.tagline}</p>
+                    <div className="flex items-center gap-1.5">
+                      <h3 className="font-display text-sm font-semibold text-ink-900">
+                        {p.name}
+                      </h3>
+                      {p.link ? (
+                        <ArrowUpRight
+                          size={14}
+                          className="text-ink-400 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
+                        />
+                      ) : (
+                        <Lock size={11} className="text-ink-400" />
+                      )}
                     </div>
-                    <div className="flex shrink-0 flex-wrap items-center gap-1.5">
-                      {p.stack.slice(0, 4).map((s) => (
+                    <p className="text-xs leading-snug text-ink-500">{p.tagline}</p>
+                    <div className="mt-1 flex flex-wrap items-center gap-1">
+                      {p.stack.slice(0, 3).map((s) => (
                         <span
                           key={s}
-                          className="rounded-md bg-paper-200 px-2 py-0.5 font-mono text-[10px] text-ink-700"
+                          className="rounded bg-paper-200 px-1.5 py-0.5 font-mono text-[10px] text-ink-700"
                         >
                           {s}
                         </span>

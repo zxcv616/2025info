@@ -6,22 +6,22 @@ export default {
     extend: {
       colors: {
         paper: {
-          DEFAULT: '#f4f1ea',
-          100: '#faf8f3',
-          200: '#efeadf',
-          300: '#e6e0d2',
+          DEFAULT: '#f6f7f9',
+          100: '#ffffff',
+          200: '#eef1f5',
+          300: '#e2e8f0',
         },
         ink: {
-          900: '#18181b',
-          800: '#27272a',
-          700: '#3f3f46',
-          500: '#71717a',
-          400: '#a1a1aa',
+          900: '#0f172a',
+          800: '#1e293b',
+          700: '#334155',
+          500: '#64748b',
+          400: '#94a3b8',
         },
         accent: {
-          DEFAULT: '#d9542e',
-          soft: '#f0764f',
-          dim: '#b23e1c',
+          DEFAULT: '#2563eb',
+          soft: '#3b82f6',
+          dim: '#1d4ed8',
         },
       },
       fontFamily: {

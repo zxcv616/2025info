@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { ArrowDown, ArrowUpRight, Crosshair, Plus } from 'lucide-react'
 import {
   profile,
@@ -193,7 +194,7 @@ function FeaturedProject({
   index: number
 }) {
   return (
-    <article className="featured-project">
+    <article className="featured-project" data-reveal>
       <div className="project-visual">
         <div className="visual-caption mono">
           <span>
@@ -272,6 +273,47 @@ function FeaturedProject({
 }
 
 function App() {
+  const mainRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    const root = mainRef.current
+    if (!root || !('IntersectionObserver' in window)) return
+
+    const preference = window.matchMedia('(prefers-reduced-motion: reduce)')
+    let observer: IntersectionObserver | undefined
+    const elements = Array.from(
+      root.querySelectorAll<HTMLElement>('[data-reveal]'),
+    )
+    const seen = new Set<Element>()
+    const updateMotion = () => {
+      observer?.disconnect()
+      if (preference.matches) {
+        elements.forEach((element) => element.classList.remove('is-revealed'))
+        return
+      }
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return
+            entry.target.classList.add('is-revealed')
+            seen.add(entry.target)
+            observer?.unobserve(entry.target)
+          })
+        },
+        { threshold: 0.08 },
+      )
+      elements.forEach((element) => {
+        if (!seen.has(element)) observer?.observe(element)
+      })
+    }
+    updateMotion()
+    preference.addEventListener('change', updateMotion)
+    return () => {
+      observer?.disconnect()
+      preference.removeEventListener('change', updateMotion)
+      elements.forEach((element) => element.classList.remove('is-revealed'))
+    }
+  }, [])
   const featured = projects.filter((project) => project.featured)
   const other = projects.filter((project) => !project.featured)
   return (
@@ -293,7 +335,7 @@ function App() {
           </a>
         </nav>
       </header>
-      <main id="main">
+      <main id="main" ref={mainRef}>
         <section className="hero wrap" aria-labelledby="hero-title">
           <div className="hero-top mono">
             <span>{profile.role}</span>
@@ -333,7 +375,7 @@ function App() {
           className="work-section wrap"
           aria-labelledby="work-title"
         >
-          <div className="section-heading">
+          <div className="section-heading" data-reveal>
             <div>
               <span className="eyebrow">Personal projects</span>
               <h2 id="work-title">Selected projects.</h2>
@@ -352,13 +394,13 @@ function App() {
               />
             ))}
           </div>
-          <div className="archive-heading">
+          <div className="archive-heading" data-reveal>
             <h3>Other projects</h3>
             <span className="mono">{other.length} projects</span>
           </div>
           <div className="archive">
             {other.map((project, index) => (
-              <article className="archive-row" key={project.name}>
+              <article className="archive-row" data-reveal key={project.name}>
                 <span className="archive-number mono">
                   {String(index + 3).padStart(2, '0')}
                 </span>
@@ -394,7 +436,7 @@ function App() {
           className="about-section"
           aria-labelledby="about-title"
         >
-          <div className="wrap about-layout">
+          <div className="wrap about-layout" data-reveal>
             <div>
               <span className="eyebrow">Background</span>
               <h2 id="about-title">About me.</h2>
@@ -432,7 +474,7 @@ function App() {
           aria-labelledby="contact-title"
         >
           <span className="eyebrow">Contact</span>
-          <div className="contact-layout">
+          <div className="contact-layout" data-reveal>
             <div className="contact-intro">
               <h2 id="contact-title">Get in touch.</h2>
               <p>Email is the best way to reach me.</p>
